@@ -39,5 +39,26 @@ export class ProductListComponent implements OnInit {
     });
   }
 }
+import { Component, OnInit, Input } from '@angular/core';
+import { Product } from '../product';
+
+@Component({
+  selector: 'app-product-details',
+  template: `
+    <div class="product-details">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-description">{{ product.description }}</p>
+    </div>
+  `,
+  styleUrls: ['./product-details.component.css']
+})
+export class ProductDetailsComponent implements OnInit {
+  @Input() product: Product;
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+}
 
 
