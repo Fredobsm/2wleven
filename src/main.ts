@@ -22,7 +22,7 @@ import { Product } from './product';
         {{ product.name }} - {{ product.price | currency }}
       </li>
     </ul>
-    <a href="https://shop2elevenverified.com">shop2elevenverified.com</a>
+    <a [routerLink]="['/']">Go to shop2elevenverified.com</a>
   `,
   styleUrls: ['./product-list.component.css']
 })
@@ -60,5 +60,6 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit() {
   }
 }
+
 
 
