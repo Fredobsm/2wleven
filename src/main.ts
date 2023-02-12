@@ -1,65 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from './product.service';
-import { Product } from './product';
-
-@Component({
-  selector: 'app-product-list',
-  template: `
-    <h2>Product List</h2>
-    <div class="form-group">
-      <label>Sort By:</label>
-      <select [(ngModel)]="sortBy">
-        <option value="name">Name</option>
-        <option value="price">Price</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Filter By:</label>
-      <input type="text" [(ngModel)]="filterTerm"/>
-    </div>
-    <ul>
-      <li *ngFor="let product of products | sort:sortBy | filter:filterTerm">
-        {{ product.name }} - {{ product.price | currency }}
-      </li>
-    </ul>
-    <a [routerLink]="['/']">Go to shop2elevenverified.com</a>
-  `,
-  styleUrls: ['./product-list.component.css']
-})
-export class ProductListComponent implements OnInit {
-  products: Product[];
-  sortBy = 'name';
-  filterTerm = '';
-
-  constructor(private productService: ProductService) { }
-
-  ngOnInit() {
-    this.productService.getProducts().subscribe(products => {
-      this.products = products;
-    });
-  }
-}
-import { Component, OnInit, Input } from '@angular/core';
-import { Product } from '../product';
-
-@Component({
-  selector: 'app-product-details',
-  template: `
-    <div class="product-details">
-      <h2 class="product-name">{{ product.name }}</h2>
-      <p class="product-description">{{ product.description }}</p>
-    </div>
-  `,
-  styleUrls: ['./product-details.component.css']
-})
-export class ProductDetailsComponent implements OnInit {
-  @Input() product: Product;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Shop2ElevenVerified.com</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Add CSS files for the Angular components -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <app-root></app-root>
+  <!-- Add JavaScript files for the Angular components -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.16.0/dist/umd/popper.min.js" integrity="sha384-7yb5tpjU5J9UQ+HUHL7ZM1bQRfO+nt4N/yVgAF/NPrq+pN/N/OkmZdbLNz+jND7V" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="runtime-es2015.js" type="module"></script>
+  <script src="runtime-es5.js" nomodule defer></script>
+  <script src="polyfills-es5.js" nomodule defer></script>
+  <script src="polyfills-es2015.js" type="module"></script>
+  <script src="styles.js"></script>
+  <script src="vendor.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
 
 
