@@ -29,4 +29,9 @@
 </body>
 </html>
 
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: '<p>Welcome to Shop2Eleven Verified!
 
