@@ -31,15 +31,8 @@
 
 import { Component } from '@angular/core';
 
-import { Component } from '@angular/core';
-
 @Component({
   selector: 'app-root',
   template: `<div>
-              <p>Welcome to Shop2Eleven Verified!</p>
-            </div>`
-})
-export class AppComponent {
-  title = 'app';
-}
+              <p>Welcome to Shop2Eleven Verified!
 
